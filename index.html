@@ -1,117 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feliz Cumpleaños ✨</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Caveat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="app-container">
-        <!-- Pantalla 1: El Sobre -->
-        <section id="screen-envelope" class="screen active">
-            <div class="content-wrapper">
-                <h1 class="greeting-text">hey babe!</h1>
-                
-                <div class="envelope-wrapper" id="envelope-trigger">
-                    <div class="envelope">
-                        <div class="front"></div>
-                        <div class="top"></div>
-                        <div class="heart">❤️</div>
-                    </div>
-                </div>
+      <!-- Pantalla 1: El Sobre -->
+      <section id="screen-envelope" class="screen active">
+        <div class="content-wrapper">
+          <h1 class="greeting-text">hey babe!</h1>
 
-                <p class="instruction-text">you've got new emails</p>
+          <div class="envelope-wrapper" id="envelope-trigger">
+            <div class="envelope">
+              <div class="front"></div>
+              <div class="top"></div>
+              <div class="heart">❤️</div>
             </div>
-        </section>
+          </div>
 
-        <!-- Pantalla 2: El Mensaje (Email) -->
-        <section id="screen-message" class="screen">
-            <div class="email-card">
-                <div class="email-header">
-                    <p><strong>From:</strong> Tu Amor ❤️</p>
-                    <p><strong>To:</strong> Mi persona favorita ✨</p>
-                </div>
-                <div class="email-body">
-                    <p class="message-label">Message:</p>
-                    <p class="message-content">Check out this awesome surprises for YOU!</p>
-                </div>
-                <button id="see-attachment" class="attachment-btn">see attachment</button>
+          <p class="instruction-text">you've got new emails</p>
+        </div>
+      </section>
+
+      <!-- Pantalla 2: El Mensaje (Email) -->
+      <section id="screen-message" class="screen">
+        <div class="email-card">
+          <div class="email-header">
+            <p><strong>From:</strong> Tu novia ❤️</p>
+            <p><strong>To:</strong> Mi persona favorita ✨</p>
+          </div>
+          <div class="email-body">
+            <p class="message-label">Message:</p>
+            <p class="message-content">
+              De mi corazon a tu corazon, te amo y feliz cumpleaños!
+            </p>
+          </div>
+          <button id="see-attachment" class="attachment-btn">
+            siguiente...
+          </button>
+        </div>
+        <button class="back-btn floating-back" id="back-to-envelope">
+          ← Volver
+        </button>
+      </section>
+
+      <!-- Pantalla 3: La Sorpresa Final -->
+      <section id="screen-birthday" class="screen">
+        <div class="birthday-scene">
+          <!-- Bunting (Banderines) -->
+          <div class="bunting">
+            <span></span><span></span><span></span><span></span><span></span
+            ><span></span><span></span><span></span>
+          </div>
+
+          <div class="stickers-container">
+            <!-- Placeholder para la imagen principal -->
+            <div class="photo-sticker">
+              <div class="image-placeholder">
+                <span>PON TU FOTO AQUÍ</span>
+              </div>
+              <div class="hat-overlay">🥳</div>
             </div>
-        </section>
 
-        <!-- Pantalla 3: La Sorpresa Final -->
-        <section id="screen-birthday" class="screen">
-            <div class="birthday-scene">
-                <!-- Bunting (Banderines) -->
-                <div class="bunting">
-                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-                </div>
+            <!-- Stickers decorativos (placeholders) -->
+            <div class="floating-sticker sticker-cake">🎂</div>
+            <div class="floating-sticker sticker-star-1">⭐</div>
+            <div class="floating-sticker sticker-star-2">🌟</div>
+            <div class="floating-sticker sticker-heart">💖</div>
+          </div>
 
-                <div class="stickers-container">
-                    <!-- Placeholder para la imagen principal -->
-                    <div class="photo-sticker">
-                        <div class="image-placeholder">
-                            <span>PON TU FOTO AQUÍ</span>
-                        </div>
-                        <div class="hat-overlay">🥳</div>
-                    </div>
+          <div class="birthday-message">
+            <h2>Happy Birthday, my love.</h2>
+            <p>
+              Being with you is truly one of the best things that has ever
+              happened to me. From the moment you came into my life, everything
+              started to feel brighter and more meaningful. Thank you for loving
+              me.
+            </p>
+          </div>
+        </div>
 
-                    <!-- Stickers decorativos (placeholders) -->
-                    <div class="floating-sticker sticker-cake">🎂</div>
-                    <div class="floating-sticker sticker-star-1">⭐</div>
-                    <div class="floating-sticker sticker-star-2">🌟</div>
-                    <div class="floating-sticker sticker-heart">💖</div>
-                </div>
-
-                <div class="birthday-message">
-                    <h2>Happy Birthday, my love.</h2>
-                    <p>Being with you is truly one of the best things that has ever happened to me. From the moment you came into my life, everything started to feel brighter and more meaningful. Thank you for loving me.</p>
-                </div>
-            </div>
-            
-            <div id="confetti-container"></div>
-        </section>
+        <div id="confetti-container"></div>
+        <button class="back-btn floating-back" id="back-to-message">
+          ← Volver
+        </button>
+      </section>
     </div>
 
     <script>
-        // Lógica simple para cambiar de pantallas
-        const envelopeTrigger = document.getElementById('envelope-trigger');
-        const seeAttachmentBtn = document.getElementById('see-attachment');
-        
-        const screenEnvelope = document.getElementById('screen-envelope');
-        const screenMessage = document.getElementById('screen-message');
-        const screenBirthday = document.getElementById('screen-birthday');
+      // Lógica simple para cambiar de pantallas
+      const envelopeTrigger = document.getElementById("envelope-trigger");
+      const seeAttachmentBtn = document.getElementById("see-attachment");
 
-        envelopeTrigger.addEventListener('click', () => {
-            // Animación de apertura
-            envelopeTrigger.classList.add('open');
-            setTimeout(() => {
-                screenEnvelope.classList.remove('active');
-                screenMessage.classList.add('active');
-            }, 1000);
-        });
+      const screenEnvelope = document.getElementById("screen-envelope");
+      const screenMessage = document.getElementById("screen-message");
+      const screenBirthday = document.getElementById("screen-birthday");
 
-        seeAttachmentBtn.addEventListener('click', () => {
-            screenMessage.classList.remove('active');
-            screenBirthday.classList.add('active');
-            startConfetti();
-        });
+      const backToEnvelopeBtn = document.getElementById("back-to-envelope");
+      const backToMessageBtn = document.getElementById("back-to-message");
 
-        function startConfetti() {
-            const container = document.getElementById('confetti-container');
-            for (let i = 0; i < 50; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.animationDelay = Math.random() * 3 + 's';
-                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-                container.appendChild(confetti);
-            }
+      function switchScreen(from, to) {
+        from.classList.remove("active");
+        to.classList.add("active");
+      }
+
+      envelopeTrigger.addEventListener("click", () => {
+        envelopeTrigger.classList.add("open");
+        setTimeout(() => {
+          switchScreen(screenEnvelope, screenMessage);
+        }, 1000);
+      });
+
+      seeAttachmentBtn.addEventListener("click", () => {
+        switchScreen(screenMessage, screenBirthday);
+        startConfetti();
+      });
+
+      backToEnvelopeBtn.addEventListener("click", () => {
+        switchScreen(screenMessage, screenEnvelope);
+        envelopeTrigger.classList.remove("open");
+      });
+
+      backToMessageBtn.addEventListener("click", () => {
+        switchScreen(screenBirthday, screenMessage);
+      });
+
+      function startConfetti() {
+        const container = document.getElementById("confetti-container");
+        container.innerHTML = "";
+        for (let i = 0; i < 50; i++) {
+          const confetti = document.createElement("div");
+          confetti.className = "confetti";
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.animationDelay = Math.random() * 3 + "s";
+          confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+          container.appendChild(confetti);
         }
+      }
     </script>
-</body>
+  </body>
 </html>

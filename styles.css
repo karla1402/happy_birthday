@@ -84,11 +84,21 @@ body {
     transition: transform 0.3s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     margin: 0 auto;
+    animation: jump 2s ease-in-out infinite;
 }
 
 .envelope-wrapper:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: scale(1.02);
+    animation-play-state: paused;
 }
+
+
+@keyframes jump {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05, 0.95); }
+}
+
+
 
 .envelope {
     position: relative;
@@ -161,7 +171,20 @@ body {
 
 .screen.active .email-card {
     transform: translateY(0);
+    animation: jump-card 3s ease-in-out infinite;
 }
+
+.email-card:hover {
+    animation-play-state: paused;
+}
+
+
+@keyframes jump-card {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-15px) scale(1.02); }
+}
+
+
 
 .email-header {
     border-bottom: 1px solid #eee;
@@ -262,7 +285,20 @@ body {
     border-radius: 4px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     z-index: 5;
+    animation: jump-photo 4s ease-in-out infinite;
 }
+
+.photo-sticker:hover {
+    animation-play-state: paused;
+}
+
+
+@keyframes jump-photo {
+    0%, 100% { transform: translate(-50%, -50%) rotate(-5deg) scale(1); }
+    50% { transform: translate(-50%, -50%) rotate(-5deg) translateY(-20px) scale(1.03); }
+}
+
+
 
 .image-placeholder {
     width: 100%;
@@ -358,6 +394,44 @@ body {
     }
 }
 
+/* BACK BUTTON */
+.back-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-hand);
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.back-btn:hover {
+    color: var(--primary-red);
+    background-color: rgba(255, 77, 77, 0.05);
+    transform: translateX(-3px);
+}
+
+.floating-back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+}
+
+.floating-back:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.2);
+}
+
 /* Responsive adjustments */
 @media (max-width: 480px) {
     .greeting-text { font-size: 2.5rem; }
@@ -367,3 +441,4 @@ body {
     .stickers-container { width: 250px; height: 300px; }
     .photo-sticker { width: 160px; height: 200px; }
 }
+
