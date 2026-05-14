@@ -24,13 +24,13 @@ body {
   overflow-y: auto;
   min-height: 100vh;
   width: 100vw;
-  /* Hide scrollbar but keep functionality */
+  /* Para que no se vea la barra pero se pueda scrollear */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }
 
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none; /* Chrome, Safari y Opera */
 }
 
 
@@ -62,7 +62,7 @@ body::-webkit-scrollbar {
 }
 
 
-/* SCREEN 1: ENVELOPE */
+/* PARTE 1: EL SOBRE */
 .content-wrapper {
   text-align: center;
 }
@@ -170,7 +170,7 @@ body::-webkit-scrollbar {
   opacity: 0;
 }
 
-/* SCREEN 2: EMAIL CARD */
+/* PARTE 2: LA TARJETA DEL CORREO */
 #screen-message {
   background-color: var(--primary-red);
 }
@@ -244,7 +244,7 @@ body::-webkit-scrollbar {
   color: #0056b3;
 }
 
-/* SCREEN 3: BIRTHDAY SCENE */
+/* PARTE 3: LA SORPRESA */
 #screen-birthday {
   background: linear-gradient(135deg, #ff4d4d 0%, #d43f3f 100%);
   color: white;
@@ -263,31 +263,31 @@ body::-webkit-scrollbar {
 
 .bunting {
   position: absolute;
-  top: -45px; /* Movido hacia arriba para eliminar el espacio */
+  top: -45px; /* Lo movi para arriba para que no haya huecos */
   left: 0;
   width: 100%;
   height: 120px;
   background-image: url("images/banderas.png");
   background-repeat: repeat-x;
-  background-size: 25% auto; /* 4 brincos exactos */
+  background-size: 25% auto; /* 4 brincos */
   z-index: 20;
   pointer-events: none;
 }
 
 .bunting-offset {
-  top: -30px; /* Movido hacia arriba proporcionalmente */
-  background-position: 12.5% 0; /* Desfasado para que se crucen en medio */
+  top: -30px; /* Movido para arriba tambien */
+  background-position: 12.5% 0; /* Para que se crucen */
   opacity: 0.9;
 }
 
-/* STICKERS */
+/* COSITAS FLOTANDO */
 .stickers-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 120px; /* Spacing from flags */
-  margin-bottom: 0; /* Reduced from 40px */
+  margin-top: 120px; /* Espacio de las banderas */
+  margin-bottom: 0; /* Lo baje un poquito */
 
   position: relative;
 }
@@ -408,7 +408,7 @@ body::-webkit-scrollbar {
 
 
 
-/* ANIMATIONS */
+/* ANIMACIONES */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -441,7 +441,7 @@ body::-webkit-scrollbar {
   }
 }
 
-/* BALLOONS */
+/* GLOBOS */
 .balloon {
   position: fixed;
   bottom: -100px;
@@ -487,7 +487,7 @@ body::-webkit-scrollbar {
 }
 
 
-/* BACK BUTTON */
+/* BOTON DE VOLVER */
 .back-btn {
   background: none;
   border: none;
@@ -525,7 +525,7 @@ body::-webkit-scrollbar {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive adjustments */
+/* Para que se vea bien en el cel */
 @media (max-width: 600px) {
   .greeting-text {
     font-size: 2.5rem;
@@ -534,7 +534,7 @@ body::-webkit-scrollbar {
     font-size: 1.5rem;
   }
 
-  /* Envelope scaling */
+  /* Tamaño del sobre */
   .envelope-wrapper {
     width: 300px;
     height: 190px;
@@ -554,7 +554,7 @@ body::-webkit-scrollbar {
     width: 50px;
   }
 
-  /* Email card */
+  /* La tarjeta del correo */
   .email-card {
     padding: 25px;
     width: 95%;
@@ -563,12 +563,12 @@ body::-webkit-scrollbar {
     font-size: 1.4rem;
   }
 
-  /* Birthday Scene */
+  /* La sorpresa */
   .stickers-container {
     margin-top: 80px;
   }
   .photo-sticker {
-    width: 90vw; /* Use viewport width on mobile */
+    width: 90vw; /* Que ocupe casi toda la pantalla */
     max-width: 400px;
   }
 
@@ -582,7 +582,7 @@ body::-webkit-scrollbar {
 
   .bunting {
     height: 80px;
-    background-size: 33% auto; /* 3 segments instead of 4 */
+    background-size: 33% auto; /* 3 pedazos en vez de 4 */
   }
 }
 

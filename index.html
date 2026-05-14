@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Para mi amor</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Canvas Confetti Library -->
+    <!-- Libreria del confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
 
   <body>
     <div class="app-container">
-      <!-- Pantalla 1: El Sobre -->
+      <!-- Pantalla 1: Lo del Sobre -->
       <section id="screen-envelope" class="screen active">
         <div class="content-wrapper">
           <h1 class="greeting-text">Ey Joel!</h1>
@@ -37,7 +37,7 @@
         </div>
       </section>
 
-      <!-- Pantalla 2: El Mensaje (Email) -->
+      <!-- Pantalla 2: El Mensajito -->
       <section id="screen-message" class="screen">
         <div class="email-card">
           <div class="email-header">
@@ -59,15 +59,15 @@
         </button>
       </section>
 
-      <!-- Pantalla 3: La Sorpresa Final -->
+      <!-- Pantalla 3: La Sorpresa!! -->
       <section id="screen-birthday" class="screen">
         <div class="birthday-scene">
-          <!-- Bunting (Banderines) -->
+          <!-- Banderines -->
           <div class="bunting"></div>
           <div class="bunting bunting-offset"></div>
 
           <div class="stickers-container">
-            <!-- Placeholder para la imagen principal -->
+            <!-- Aqui va la foto -->
             <div class="photo-sticker">
               <img src="images/myLove.png" alt="My Love" class="main-photo" />
             </div>
@@ -127,7 +127,7 @@
     </div>
 
     <script>
-      // Lógica simple para cambiar de pantallas
+      // Codigo para cambiar de pantalla
       const envelopeTrigger = document.getElementById("envelope-trigger");
       const seeAttachmentBtn = document.getElementById("see-attachment");
 
@@ -173,7 +173,7 @@
           }
 
           const particleCount = 50 * (timeLeft / duration);
-          // since particles fall down, start a bit higher than random
+          // que caigan de arribita
           confetti({
             ...defaults,
             particleCount,
@@ -251,12 +251,12 @@
           balloon.style.backgroundColor =
             colors[Math.floor(Math.random() * colors.length)];
 
-          // Random sizes
+          // Tamaños al azar
           const size = Math.random() * 20 + 30; // Between 30 and 50
           balloon.style.width = size + "px";
           balloon.style.height = size * 1.3 + "px";
 
-          // Varied rise and sway speeds
+          // Que se muevan diferente
           balloon.style.animationDuration =
             Math.random() * 3 + 4 + "s, " + (Math.random() * 2 + 2) + "s";
           balloon.style.animationDelay = Math.random() * 2 + "s";
@@ -264,12 +264,12 @@
 
           document.body.appendChild(balloon);
 
-          // Remove after animation
+          // Borrarlos cuando terminen
           setTimeout(() => balloon.remove(), 7000);
         }
       }
 
-      // Confetti at bottom of scroll
+      // Confetti cuando llegas al final
       let hasFiredAtBottom = false;
       window.addEventListener("scroll", () => {
         if (screenBirthday.classList.contains("active")) {
@@ -297,7 +297,7 @@
       });
 
       function startConfetti() {
-        // Confetti removed per user request
+        // Lo quite porque no me gusto jaja
       }
     </script>
   </body>
