@@ -26,7 +26,6 @@
               <div class="heart">
                 <img src="images/sobre.png" alt="Corazón" />
               </div>
-
             </div>
           </div>
 
@@ -63,34 +62,55 @@
           <div class="bunting"></div>
           <div class="bunting bunting-offset"></div>
 
-
-
-
-
-
-
           <div class="stickers-container">
             <!-- Placeholder para la imagen principal -->
             <div class="photo-sticker">
               <img src="images/myLove.png" alt="My Love" class="main-photo" />
-              <div class="hat-overlay">🥳</div>
             </div>
-
-
-            <!-- Stickers decorativos (placeholders) -->
-            <div class="floating-sticker sticker-cake">🎂</div>
-            <div class="floating-sticker sticker-star-1">⭐</div>
-            <div class="floating-sticker sticker-star-2">🌟</div>
-            <div class="floating-sticker sticker-heart">💖</div>
           </div>
 
           <div class="birthday-message">
             <h2>Happy Birthday, my love.</h2>
             <p>
-              Being with you is truly one of the best things that has ever
-              happened to me. From the moment you came into my life, everything
-              started to feel brighter and more meaningful. Thank you for loving
-              me.
+              Hoy es un día muy especial, porque hoy nació una de las personas
+              más importantes de mi vida. Y aunque a veces siento que las
+              palabras no me alcanzan para explicarte todo lo que significas
+              para mí, quiero intentarlo, porque mereces saber lo muchísimo que
+              te amo. <br />Gracias por existir. Gracias por llegar a mi vida de
+              la forma en que lo hiciste, por convertirte en alguien tan
+              importante para mí, por regalarme momentos, risas, abrazos,
+              aprendizajes y también paz. De verdad no sabes cuánto agradezco
+              tenerte. <br />Quiero que sepas que admiro muchísimo la persona
+              que eres. Admiro tu forma de ser, tu esencia, tu manera de ver las
+              cosas, todo lo que luchas, todo lo que haces y la persona en la
+              que te conviertes cada día. A veces tal vez no te das cuenta de lo
+              increíble que eres, pero yo sí lo veo. Veo a alguien fuerte,
+              valioso, inteligente, noble y con un corazón enorme. <br />No
+              quiero que este cumpleaños sea solo un “feliz cumpleaños” más.
+              Quiero que recuerdes que eres alguien profundamente amado. Que
+              tienes a una persona aquí que cree en ti, que te admira, que se
+              siente orgullosa de ti y que desea de corazón verte cumplir cada
+              meta, cada sueño y cada cosa bonita que anhelas. <br />Gracias por
+              quedarte, por acompañarme, por conocer mis partes bonitas y
+              también mis momentos difíciles. Gracias por tu paciencia, por
+              escucharme, por hacerme sentir querida y por permitirme formar
+              parte de tu vida. No sabes cuánto valoro eso. <br />Y si pudiera
+              pedir algo para ti este nuevo año de vida, pediría que la vida te
+              abrace bonito. Que te lleguen cosas buenas, oportunidades
+              increíbles, tranquilidad, felicidad y mucho amor. Que nunca te
+              falten razones para sonreír, ni fuerzas para seguir adelante
+              cuando las cosas se pongan difíciles. Porque mereces cosas muy
+              bonitas, de verdad. <br />También quiero que sepas algo: te amo
+              muchísimo. Más de lo que a veces logro expresar. Te amo en los
+              días fáciles y en los complicados, en los momentos simples, en las
+              conversaciones largas, en las risas tontas y hasta en los
+              silencios. Te amo por quien eres y por cómo me haces sentir. Y
+              sinceramente, me siento muy afortunada de coincidir contigo en
+              esta vida. <br />Feliz cumpleaños, amor. Espero seguir celebrando
+              muchos más contigo, acompañándote en cada etapa, viendo cómo
+              creces, cómo cumples sueños y cómo sigues convirtiéndote en la
+              increíble persona que eres. <br />Gracias por existir y gracias
+              por dejarme amarte.
             </p>
           </div>
         </div>
@@ -117,6 +137,7 @@
       function switchScreen(from, to) {
         from.classList.remove("active");
         to.classList.add("active");
+        window.scrollTo(0, 0);
       }
 
       envelopeTrigger.addEventListener("click", () => {
@@ -141,16 +162,7 @@
       });
 
       function startConfetti() {
-        const container = document.getElementById("confetti-container");
-        container.innerHTML = "";
-        for (let i = 0; i < 50; i++) {
-          const confetti = document.createElement("div");
-          confetti.className = "confetti";
-          confetti.style.left = Math.random() * 100 + "vw";
-          confetti.style.animationDelay = Math.random() * 3 + "s";
-          confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-          container.appendChild(confetti);
-        }
+        // Confetti removed per user request
       }
     </script>
   </body>
