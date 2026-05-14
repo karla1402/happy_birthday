@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feliz Cumpleaños ✨</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +19,7 @@
       <!-- Pantalla 1: El Sobre -->
       <section id="screen-envelope" class="screen active">
         <div class="content-wrapper">
-          <h1 class="greeting-text">hey babe!</h1>
+          <h1 class="greeting-text">Ey Joel!</h1>
 
           <div class="envelope-wrapper" id="envelope-trigger">
             <div class="envelope">
@@ -29,7 +31,7 @@
             </div>
           </div>
 
-          <p class="instruction-text">you've got new emails</p>
+          <p class="instruction-text">Tienes nuevos correos electrónicos</p>
         </div>
       </section>
 
@@ -37,8 +39,8 @@
       <section id="screen-message" class="screen">
         <div class="email-card">
           <div class="email-header">
-            <p><strong>From:</strong> Tu novia ❤️</p>
-            <p><strong>To:</strong> Mi persona favorita ✨</p>
+            <p><strong>From:</strong> Tu novia</p>
+            <p><strong>To:</strong> Mi persona favorita</p>
           </div>
           <div class="email-body">
             <p class="message-label">Message:</p>
@@ -147,9 +149,79 @@
         }, 1000);
       });
 
+      function startConfetti() {
+        const duration = 5 * 1000;
+        const animationEnd = Date.now() + duration;
+        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+        function randomInRange(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        const interval = setInterval(function () {
+          const timeLeft = animationEnd - Date.now();
+
+          if (timeLeft <= 0) {
+            return clearInterval(interval);
+          }
+
+          const particleCount = 50 * (timeLeft / duration);
+          // since particles fall down, start a bit higher than random
+          confetti({
+            ...defaults,
+            particleCount,
+            origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+          });
+          confetti({
+            ...defaults,
+            particleCount,
+            origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+          });
+        }, 250);
+      }
+
+      function fireExplosion() {
+        const count = 200;
+        const defaults = {
+          origin: { y: 0.7 },
+        };
+
+        function fire(particleRatio, opts) {
+          confetti({
+            ...defaults,
+            ...opts,
+            particleCount: Math.floor(count * particleRatio),
+          });
+        }
+
+        fire(0.25, {
+          spread: 26,
+          startVelocity: 55,
+        });
+        fire(0.2, {
+          spread: 60,
+        });
+        fire(0.35, {
+          spread: 100,
+          decay: 0.91,
+          scalar: 0.8,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 25,
+          decay: 0.92,
+          scalar: 1.2,
+        });
+        fire(0.1, {
+          spread: 120,
+          startVelocity: 45,
+        });
+      }
+
       seeAttachmentBtn.addEventListener("click", () => {
         switchScreen(screenMessage, screenBirthday);
-        startConfetti();
+        fireExplosion();
+        setTimeout(startConfetti, 500);
       });
 
       backToEnvelopeBtn.addEventListener("click", () => {
