@@ -77,15 +77,18 @@ body {
 
 .envelope-wrapper {
     position: relative;
-    width: 280px;
-    height: 180px;
+    width: 380px;
+    height: 240px;
     background-color: var(--soft-pink);
     cursor: pointer;
     transition: transform 0.3s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     margin: 0 auto;
+    border-radius: 15px;
     animation: jump 2s ease-in-out infinite;
+    overflow: hidden;
 }
+
 
 .envelope-wrapper:hover {
     transform: scale(1.02);
@@ -110,13 +113,14 @@ body {
     position: absolute;
     width: 0;
     height: 0;
-    border-right: 140px solid var(--soft-pink);
-    border-bottom: 90px solid var(--primary-red);
-    border-left: 140px solid var(--soft-pink);
-    border-top: 90px solid transparent;
+    border-right: 190px solid var(--soft-pink);
+    border-bottom: 120px solid var(--primary-red);
+    border-left: 190px solid var(--soft-pink);
+    border-top: 120px solid transparent;
     bottom: 0;
     z-index: 10;
 }
+
 
 .envelope .top {
     position: absolute;
@@ -124,24 +128,31 @@ body {
     left: 0;
     width: 0;
     height: 0;
-    border-right: 140px solid transparent;
-    border-bottom: 90px solid transparent;
-    border-left: 140px solid transparent;
-    border-top: 95px solid var(--primary-red);
+    border-right: 190px solid transparent;
+    border-bottom: 120px solid transparent;
+    border-left: 190px solid transparent;
+    border-top: 125px solid var(--primary-red);
     transform-origin: top;
     transition: transform 0.6s ease;
     z-index: 5;
 }
+
 
 .envelope .heart {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
     z-index: 15;
     transition: transform 0.3s ease;
 }
+
+.heart img {
+    width: 70px;
+    height: auto;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+}
+
 
 .envelope-wrapper.open .top {
     transform: rotateX(180deg);
@@ -242,28 +253,30 @@ body {
     position: relative;
 }
 
-/* BUNTING */
 .bunting {
     position: absolute;
-    top: 0;
+    top: -45px; /* Movido hacia arriba para eliminar el espacio */
     left: 0;
     width: 100%;
-    display: flex;
-    justify-content: space-around;
+    height: 120px;
+    background-image: url('images/banderas.png');
+    background-repeat: repeat-x;
+    background-size: 25% auto; /* 4 brincos exactos */
+    z-index: 20;
+    pointer-events: none;
 }
 
-.bunting span {
-    width: 0;
-    height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 30px solid #fff;
-    opacity: 0.8;
+.bunting-offset {
+    top: -30px; /* Movido hacia arriba proporcionalmente */
+    background-position: 12.5% 0; /* Desfasado para que se crucen en medio */
+    opacity: 0.9;
 }
 
-.bunting span:nth-child(even) {
-    border-top-color: #5bc0de;
-}
+
+
+
+
+
 
 /* STICKERS */
 .stickers-container {
@@ -286,7 +299,16 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     z-index: 5;
     animation: jump-photo 4s ease-in-out infinite;
+    overflow: hidden;
 }
+
+.photo-sticker .main-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
 
 .photo-sticker:hover {
     animation-play-state: paused;
