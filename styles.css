@@ -1,0 +1,369 @@
+:root {
+    --bg-color: #f4f1ea;
+    --primary-red: #ff4d4d;
+    --dark-red: #d43f3f;
+    --soft-pink: #ffb3b3;
+    --text-dark: #333;
+    --text-muted: #666;
+    --white: #ffffff;
+    --font-main: 'Outfit', sans-serif;
+    --font-hand: 'Caveat', cursive;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s;
+    padding: 20px;
+}
+
+.screen.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* SCREEN 1: ENVELOPE */
+.content-wrapper {
+    text-align: center;
+}
+
+.greeting-text {
+    font-family: var(--font-hand);
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    animation: fadeInDown 1s ease-out;
+}
+
+.instruction-text {
+    font-family: var(--font-hand);
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: var(--text-muted);
+    animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.envelope-wrapper {
+    position: relative;
+    width: 280px;
+    height: 180px;
+    background-color: var(--soft-pink);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: 0 auto;
+}
+
+.envelope-wrapper:hover {
+    transform: translateY(-5px) scale(1.02);
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.envelope .front {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 140px solid var(--soft-pink);
+    border-bottom: 90px solid var(--primary-red);
+    border-left: 140px solid var(--soft-pink);
+    border-top: 90px solid transparent;
+    bottom: 0;
+    z-index: 10;
+}
+
+.envelope .top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 140px solid transparent;
+    border-bottom: 90px solid transparent;
+    border-left: 140px solid transparent;
+    border-top: 95px solid var(--primary-red);
+    transform-origin: top;
+    transition: transform 0.6s ease;
+    z-index: 5;
+}
+
+.envelope .heart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    z-index: 15;
+    transition: transform 0.3s ease;
+}
+
+.envelope-wrapper.open .top {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope-wrapper.open .heart {
+    transform: translate(-50%, -150%) scale(1.5);
+    opacity: 0;
+}
+
+/* SCREEN 2: EMAIL CARD */
+#screen-message {
+    background-color: var(--primary-red);
+}
+
+.email-card {
+    background: var(--white);
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transform: translateY(20px);
+    transition: transform 0.5s ease;
+}
+
+.screen.active .email-card {
+    transform: translateY(0);
+}
+
+.email-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.message-label {
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.message-content {
+    font-family: var(--font-hand);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: var(--text-dark);
+}
+
+.attachment-btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: none;
+    color: #007bff;
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.attachment-btn:hover {
+    color: #0056b3;
+}
+
+/* SCREEN 3: BIRTHDAY SCENE */
+#screen-birthday {
+    background: linear-gradient(135deg, #ff4d4d 0%, #d43f3f 100%);
+    color: white;
+}
+
+.birthday-scene {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+/* BUNTING */
+.bunting {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bunting span {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 30px solid #fff;
+    opacity: 0.8;
+}
+
+.bunting span:nth-child(even) {
+    border-top-color: #5bc0de;
+}
+
+/* STICKERS */
+.stickers-container {
+    position: relative;
+    width: 300px;
+    height: 350px;
+    margin-bottom: 20px;
+}
+
+.photo-sticker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    width: 200px;
+    height: 250px;
+    background: white;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 5;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px dashed #999;
+}
+
+.hat-overlay {
+    position: absolute;
+    top: -40px;
+    right: -20px;
+    font-size: 4rem;
+    transform: rotate(15deg);
+}
+
+.floating-sticker {
+    position: absolute;
+    font-size: 3rem;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+    animation: float 3s ease-in-out infinite;
+}
+
+.sticker-cake { bottom: 10px; left: -30px; animation-delay: 0s; }
+.sticker-star-1 { top: 20px; right: -20px; animation-delay: 0.5s; font-size: 2rem; }
+.sticker-star-2 { bottom: 60px; right: -40px; animation-delay: 1.2s; font-size: 2.5rem; }
+.sticker-heart { top: 40px; left: -40px; animation-delay: 0.8s; font-size: 2rem; }
+
+.birthday-message {
+    max-width: 500px;
+    animation: fadeInUp 1s ease-out;
+}
+
+.birthday-message h2 {
+    font-family: var(--font-hand);
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.birthday-message p {
+    font-family: var(--font-hand);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* CONFETTI */
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.8;
+    top: -10px;
+    animation: fall linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .greeting-text { font-size: 2.5rem; }
+    .email-card { padding: 25px; width: 90%; }
+    .birthday-message h2 { font-size: 2.2rem; }
+    .birthday-message p { font-size: 1.2rem; }
+    .stickers-container { width: 250px; height: 300px; }
+    .photo-sticker { width: 160px; height: 200px; }
+}
